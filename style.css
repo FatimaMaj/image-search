@@ -1,0 +1,186 @@
+/* Change some built-in browser properties to make them more predictable. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    text-decoration: inherit;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    padding: 32px;
+    text-align: center;
+    line-height: 1;
+    font-family: "Roboto Slab", serif;
+    color: white;
+    background-image:
+        /* A half-transparent black overlay, to make the image a little darker. */
+        linear-gradient(to top, hsla(0, 0%, 0%, 0.25), hsla(0, 0%, 0%, 0.25)),
+        /* The actual image. */
+        url("background.jpg");
+    background-size: 100%;
+    background-position: top;
+    box-shadow: inset 0 0 8px black;
+}
+
+.menu {
+    margin-bottom: 24px;
+}
+
+.page-title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px black;
+}
+
+.search-query,
+.search-button {
+    height: 40px;
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+.search-query {
+    margin-right: 8px;
+}
+
+.search-colors {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search-colors input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 1px black;
+}
+
+.search-colors input:checked, .search-colors input:focus {
+    box-shadow: 0 0 0 1px black, 0 0 0 2px white;
+    outline: 0;
+}
+
+.search-colors input:focus {
+    transform: scale(1.1);
+}
+
+.search-colors input[value="any"] { background-image: linear-gradient(to right, red, orange, yellow, green, turquoise, blue, purple); }
+.search-colors input[value="red"] { background-color: red; }
+.search-colors input[value="orange"] { background-color: orange; }
+.search-colors input[value="yellow"] { background-color: yellow; }
+.search-colors input[value="green"] { background-color: green; }
+.search-colors input[value="turquoise"] { background-color: turquoise; }
+.search-colors input[value="blue"] { background-color: blue; }
+.search-colors input[value="lilac"] { background-color: purple; }
+.search-colors input[value="pink"] { background-color: pink; }
+.search-colors input[value="white"] { background-color: white; }
+.search-colors input[value="gray"] { background-color: gray; }
+.search-colors input[value="black"] { background-color: black; }
+.search-colors input[value="brown"] { background-color: brown; }
+
+.photo-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.photo {
+    position: relative;
+    margin: 12px;
+    padding: 16px;
+    font-family: "Patrick Hand", cursive;
+    background-color: hsl(0, 0%, 95%);
+    box-shadow: 2px 2px 4px black;
+}
+
+.photo:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.photo:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.photo-image {
+    display: block;
+    width: 192px;
+    height: 192px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.photo::before {
+    position: absolute;
+    z-index: -1;
+    left: 16px;
+    top: 16px;
+    content: "Loading…";
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 192px;
+    height: 192px;
+    font-size: 14px;
+    color: hsl(0, 0%, 70%);
+    background-color: hsl(0, 0%, 90%);
+}
+
+.photo-caption {
+    color: black;
+}
+
+.photo-title, .photo-author {
+    width: 192px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.photo-title {
+    font-size: 18px;
+}
+
+.photo-author {
+    font-size: 14px;
+}
+
+.result-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.result-buttons button {
+    height: 40px;
+    border: 0;
+    margin: 8px;
+    padding: 8px;
+    font-weight: bold;
+    color: white;
+    background-color: hsl(160, 100%, 25%);
+    box-shadow: 0 0 4px black;
+    text-shadow: 0 0 2px black;
+}
+
+.result-buttons button:disabled {
+    color: hsl(0, 0%, 75%);
+    background-color: hsl(0, 0%, 25%);
+    text-shadow: none;
+}
